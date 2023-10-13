@@ -15,12 +15,12 @@ public class HomePage extends WebPage {
 	
 	public HomePage() {
 		
-		final Label helloMessage = new Label("helloMessage", "Hello WicketWorld!");
-		add(helloMessage.setOutputMarkupId(true));
+		final Label label = new Label("label", "Hello WicketWorld!");
+		add(label.setOutputMarkupId(true));
 		
 		final Form<Void> form = new Form<>("form");
 		
-		final AjaxButton secondSubmitter = new AjaxButton("submit2", Model.of("Second submitter")) {
+		final AjaxButton secondSubmitter = new AjaxButton("button", Model.of("Second submitter")) {
 			
 			private static final long serialVersionUID = 1L;
 			
@@ -29,9 +29,9 @@ public class HomePage extends WebPage {
 				
 				number++;
 				
-				helloMessage.setDefaultModelObject(number.toString());
+				label.setDefaultModelObject(number.toString());
 				
-				target.add(helloMessage);
+				target.add(label);
 				
 			}
 			
